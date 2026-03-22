@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Check, ShoppingBag } from "lucide-react";
+import { X, Check } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Product } from "@/data/products";
 import { useCart } from "@/context/CartContext";
