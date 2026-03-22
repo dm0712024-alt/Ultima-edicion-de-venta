@@ -24,9 +24,6 @@ const App = () => (
               <BrowserRouter>
                 <Routes>
                   <Route path="/" element={<Index />} />
-                  <Route path="/admin" element={<Admin />} />
-                  <Route path="/mis-pedidos" element={<MisPedidos />} />
-                  <Route path="/pedido/:orderNumber" element={<OrderPublic />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </BrowserRouter>
