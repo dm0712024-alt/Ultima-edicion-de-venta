@@ -8,9 +8,6 @@ import { ThemeProvider } from "@/context/ThemeContext";
 import { UserProvider } from "@/context/UserContext";
 import { LanguageProvider } from "@/context/LanguageContext";
 import Index from "./pages/Index";
-import Admin from "./pages/Admin";
-import MisPedidos from "./pages/MisPedidos";
-import OrderPublic from "./pages/OrderPublic";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
