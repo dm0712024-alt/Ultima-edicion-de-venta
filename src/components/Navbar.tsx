@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ShoppingBag, Package } from "lucide-react";
+import { Menu, X, ShoppingBag } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { useLanguage } from "@/context/LanguageContext";
-import { useNavigate } from "react-router-dom";
 import SettingsDropdown from "@/components/SettingsDropdown";
 
 const navLinks = [
@@ -17,7 +16,6 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { totalItems, setIsOpen: setCartOpen } = useCart();
   const { t } = useLanguage();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -75,18 +73,6 @@ const Navbar = () => {
           {/* Settings Dropdown */}
           <SettingsDropdown scrolled={scrolled} />
 
-          {/* Mis Pedidos */}
-          <button
-            onClick={() => navigate("/mis-pedidos")}
-            className={`hidden lg:flex items-center gap-1.5 rounded-full border px-3 py-2 text-xs font-medium transition-all backdrop-blur-sm hover:border-accent hover:text-accent ${
-              scrolled ? "border-border text-foreground" : "border-primary-foreground/20 text-primary-foreground/80"
-            }`}
-            aria-label="Mis pedidos"
-          >
-            <Package className="h-3.5 w-3.5" />
-            Mis pedidos
-          </button>
-
           {/* Cart Button */}
           <button
             onClick={() => setCartOpen(true)}
@@ -137,13 +123,6 @@ const Navbar = () => {
                   {t(link.labelKey)}
                 </button>
               ))}
-              <button
-                onClick={() => { setIsOpen(false); navigate("/mis-pedidos"); }}
-                className="flex items-center gap-2 text-left text-base font-medium text-foreground"
-              >
-                <Package className="h-4 w-4 text-accent" />
-                Mis Pedidos
-              </button>
             </div>
           </motion.div>
         )}
