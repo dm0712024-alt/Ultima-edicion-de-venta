@@ -16,7 +16,6 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const { totalItems, setIsOpen: setCartOpen } = useCart();
   const { t } = useLanguage();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
